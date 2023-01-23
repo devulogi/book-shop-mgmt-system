@@ -38,6 +38,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 initPassport();
 
+app.use((req, res, next) => {
+  res.locals.user = req.user; // Add user to locals for all views to use
+  res.locals.isAuthenticated = req.isAuthenticated(); // Add isAuthenticated to locals for all views to use
+  res.locals.error = req.flash('error'); // Add error to locals for all views to use
+  res.locals.success = req.flash('success'); // Add success to locals for all views to use
+  next();
+});
+
 app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
