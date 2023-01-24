@@ -1,0 +1,14 @@
+nav.navbar
+  ul.nav
+    li.nav-item
+      a(href='/') Home
+    if user
+      li.nav-item
+        a(href=`/profile/${user._id}`) Profile
+      li.nav-item
+        a(href='/logout') Logout
+    else
+      li.nav-item
+        a(href='/auth') Login
+      li.nav-item
+        a(href='/register') Register
