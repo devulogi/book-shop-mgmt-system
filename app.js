@@ -12,6 +12,7 @@ var flash = require('express-flash');
 var { initPassport } = require('./services/passport');
 
 var indexRouter = require('./routes/index');
+var profileRouter = require('./routes/profile');
 var authRouter = require('./routes/auth');
 var registerRouter = require('./routes/register');
 var logoutRouter = require('./routes/logout');
@@ -34,15 +35,15 @@ app.use(session({
     checkPeriod: 3600000 // prune expired entries every 1hour
   })
 }));
-app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 initPassport();
+app.use(flash());
 
 app.use((req, res, next) => {
   res.locals.user = req.user; // Add user to locals for all views to use
   res.locals.isAuthenticated = req.isAuthenticated(); // Add isAuthenticated to locals for all views to use
-  res.locals.error = req.flash('error'); // Add error to locals for all views to use
+  res.locals.errors = req.flash('error'); // Add error to locals for all views to use
   res.locals.success = req.flash('success'); // Add success to locals for all views to use
   next();
 });
@@ -51,6 +52,7 @@ app.use(stylus.middleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/profile/:id', profileRouter);
 app.use('/auth', authRouter);
 app.use('/register', registerRouter);
 app.use('/users', usersRouter);

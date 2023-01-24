@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .eight.wide.column
+    if !user
+      .ui.placeholder
+        .line
+        .line
+
+      .ui.placeholder
+        .line
+        .line
+        .line
+        .line
+    else
+      h1 #{title}
+      p Welcome to #{title}, #{user.username}!
