@@ -1,16 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var User = require('../models/user');
+var User = require('../models/user.model');
 
 /* GET register page. */
-router.get('/register', function(req, res, next) {
-  res.render('register', { title: 'Register' });
-}
+router.get('/', function (req, res, next) {
+  res.render('register', {title: 'Register'});
+});
 
 /* POST register a new user. */
-router.post('/register', function(req, res) {
+router.post('/', function (req, res) {
   // Check if the user already exists
-  User.findOne({ username: req.body.username }, function(err, user) {
+  User.findOne({username: req.body.username}, function (err, user) {
     if (err) {
       return next(err);
     }
@@ -26,12 +26,14 @@ router.post('/register', function(req, res) {
     });
 
     // Save the user
-    newUser.save(function(err) {
+    newUser.save(function (err) {
       if (err) {
         return next(err);
       }
       req.flash('success', 'User created');
-      res.redirect('/login');
+      res.redirect('/auth');
     });
-  }
+  })
 });
+
+module.exports = router;
