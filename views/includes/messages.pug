@@ -1,0 +1,9 @@
+.sixteen.wide.column
+  if (success.length > 0)
+    .ui.success.message
+      i.close.icon
+      .header= success.join(' ')
+  if (errors.length > 0)
+    .ui.error.message
+      i.close.icon
+      .header= errors.join(' ')

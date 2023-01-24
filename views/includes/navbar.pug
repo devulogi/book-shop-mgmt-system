@@ -1,14 +1,16 @@
-nav.navbar
-  ul.nav
-    li.nav-item
-      a(href='/') Home
+.ui.secondary.pointing.menu
+  a.item(href='/', class=(page === 'home' ? 'active' : ''))
+    | Home
+  .right.menu
+    .item
+      .ui.mini.icon.input
+        input(type='text' placeholder='Search...')
+        i.search.link.icon
     if user
-      li.nav-item
-        a(href=`/profile/${user._id}`) Profile
-      li.nav-item
-        a(href='/logout') Logout
+      a.item(href=`/profile/${user._id}`, class=(page === 'profile' ? 'active' : ''))
+        | Profile
+      a.ui.item(href='/logout')
+        | Logout
     else
-      li.nav-item
-        a(href='/auth') Login
-      li.nav-item
-        a(href='/register') Register
+      a.ui.item(href='/auth', class=(page === 'auth' ? 'active' : ''))
+        | Login
