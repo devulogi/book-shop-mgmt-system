@@ -4,15 +4,16 @@ services:
     app:
         build: .
         volumes:
-        - .:/app
+            - .:/app
         ports:
-        - "5050:5050"
+            - "5050:5050"
         environment:
-        - PORT=5050
-        - NODE_ENV=development
-        - MONGO_URL=mongodb://mongo:27017
-        - MONGO_DB=app
-        - SESSION_SECRET=6524d3759499897978cfd27429a20092ac16a2fc856e7d8cafd821e9218c5edc1d57fa55e10c1db2ae36ac29cf6c864883dc4f0d4b5a9b55d94813cd6afcaebb
+            - PORT=5050
+            - NODE_ENV=development
+            - MONGO_URL=mongodb://mongo:27017
+            - MONGO_DB=app
+            - SESSION_SECRET=6524d3759499897978cfd27429a20092ac16a2fc856e7d8cafd821e9218c5edc1d57fa55e10c1db2ae36ac29cf6c864883dc4f0d4b5a9b55d94813cd6afcaebb
+        command: ["npm", "run", "debug"]
     mongo:
         image: mongo
         ports:
