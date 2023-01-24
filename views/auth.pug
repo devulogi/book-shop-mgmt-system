@@ -3,7 +3,7 @@ extends layout
 block content
     h1= title
     p Welcome to #{title}
-    form(action='/login', method='post')
+    form(action='/auth', method='post')
         div
             label(for='username') Username:
             input(type='text', name='username', id='username')
