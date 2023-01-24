@@ -13,6 +13,7 @@ var { initPassport } = require('./services/passport');
 
 var indexRouter = require('./routes/index');
 var authRouter = require('./routes/auth');
+var registerRouter = require('./routes/register');
 var logoutRouter = require('./routes/logout');
 var usersRouter = require('./routes/users');
 
@@ -51,6 +52,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
+app.use('/register', registerRouter);
 app.use('/users', usersRouter);
 app.use('/logout', logoutRouter);
 
