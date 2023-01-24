@@ -1,14 +1,28 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
-    form(action='/auth', method='post')
-        div
-            label(for='username') Username:
-            input(type='text', name='username', id='username')
-        div
-            label(for='password') Password:
-            input(type='password', name='password', id='password')
-        div
-            input(type='submit', value='Log In')
+    .sixteen.wide.column
+        h1= title
+        p Welcome to #{title}
+
+        .ui.placeholder.segment
+            .ui.two.column.very.relaxed.stackable.grid
+                .column
+                    form.ui.form(action='/auth', method='post')
+                        .field
+                            label(for='username') Username:
+                            .ui.left.icon.input
+                                input(type='text', name='username', id='username', placeholder='Username')
+                                i.user.icon
+                        .field
+                            label(for='password') Password:
+                            .ui.left.icon.input
+                                input(type='password', name='password', id='password', placeholder='Password')
+                                i.lock.icon
+                        button.ui.blue.submit.button(type='submit') Login
+                .middle.aligned.column
+                    .header
+                        | Don't have an account?
+                    a.ui.green.submit.button(href='/register') Register Now
+            .ui.vertical.divider
+                | Or
