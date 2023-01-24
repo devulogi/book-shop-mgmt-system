@@ -6,6 +6,9 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     include includes/navbar
-    block content
+    .ui.grid.container
+      include includes/messages
+      block content
     script(src='/vendor/jquery/jquery.min.js')
     script(src='/vendor/semantic-ui/semantic.min.js')
+    script(src='/javascripts/main.js')
