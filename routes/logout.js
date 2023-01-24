@@ -6,8 +6,12 @@ var router = express.Router();
  */
 
 router.get('/', function (req, res) {
-  req.logout();
-  res.redirect('/');
+  req.logout(function(err) {
+    if (err) {
+      console.log(err);
+    }
+    res.redirect('/');
+  });
 });
 
 module.exports = router;
