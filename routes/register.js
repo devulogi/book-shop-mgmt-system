@@ -4,7 +4,7 @@ var User = require('../models/user.model');
 
 /* GET register page. */
 router.get('/', function (req, res, next) {
-  res.render('register', {title: 'Register'});
+  res.render('register', {title: 'Register', page: 'register'});
 });
 
 /* POST register a new user. */

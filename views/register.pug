@@ -1,14 +1,24 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
-    form(action='/register' method='post')
-        div
-            label(for='username') Username:
-            input(type='text' name='username' id='username')
-        div
-            label(for='password') Password:
-            input(type='password' name='password' id='password')
-        div
-            input(type='submit' value='Register')
+    .sixteen.wide.column
+        .ui.attached.message
+            h1= title
+            p Welcome to #{title}
+        form.ui.form.attached.fluid.segment(action='/register' method='post')
+            div.field
+                label(for='username') Username:
+                .ui.left.icon.input
+                    input(type='text' name='username' id='username' placeholder='Username')
+                    i.user.icon
+            div.field
+                label(for='password') Password:
+                .ui.left.icon.input
+                    input(type='password' name='password' id='password' placeholder='Password')
+                    i.lock.icon
+            button.ui.blue.submit.button(type='submit' value='Register') Register
+        .ui.bottom.attached.warning.message
+            i.icon.help
+            | Already have an account?
+            a(href='/auth') Login here
+            |  instead.
