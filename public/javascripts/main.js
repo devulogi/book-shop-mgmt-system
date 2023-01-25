@@ -9,6 +9,6 @@ $(function() {
 
   // Auto hide message after 2 seconds
   setTimeout(function() {
-    $('.message').transition('fade');
+    $('#message').transition('fade');
   }, 2000);
 });

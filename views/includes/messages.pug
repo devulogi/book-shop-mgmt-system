@@ -1,9 +1,9 @@
 .sixteen.wide.column
   if (success.length > 0)
-    .ui.success.tiny.message
+    .ui.success.tiny.message#message
       i.close.icon
       .header= success.join(' ')
   if (errors.length > 0)
-    .ui.error.tiny.message
+    .ui.error.tiny.message#message
       i.close.icon
       .header= errors.join(' ')
