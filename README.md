@@ -1,6 +1,6 @@
 # Bookshop Management System
 
-This fully featured bookshop management system is for demo and educational purposes only.
+This a fully featured bookshop management system is for demo and educational purposes only.
 
 ### It has features like:
 - Add new books to the database
