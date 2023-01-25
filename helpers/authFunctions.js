@@ -10,8 +10,26 @@ function comparePassword(password, encryptedPassword) {
   return encryptPassword(password) === encryptedPassword;
 }
 
+// isAuth function to check if user is authenticated or not
+function isAuth(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/auth');
+}
+
+// isAdmin function to check if user is authenticated and is an admin or not
+function isAdmin(req, res, next) {
+  if (req.isAuthenticated() && req.user.isAdmin) {
+    return next();
+  }
+  res.redirect('/auth');
+}
+
 // export functions
 module.exports = {
   encryptPassword: encryptPassword,
-  comparePassword: comparePassword
+  comparePassword: comparePassword,
+  isAuth: isAuth,
+  isAdmin: isAdmin
 }
