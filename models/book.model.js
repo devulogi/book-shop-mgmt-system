@@ -7,10 +7,12 @@ var BookSchema = new Schema({
     required: true
   },
   description: String,
-  author: [{
-    type: String,
-    required: true
-  }],
+  authors: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Author'
+    }
+  ],
   isbn: String,
   published: {
     type: Date,
