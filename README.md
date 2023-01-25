@@ -25,7 +25,6 @@ This a fully featured bookshop management system is for demo and educational pur
 - Change password feature (if you want to change your password)
 
 ### Installation
-code
 ```bash
 # install docker and docker-compose
 https://docs.docker.com/get-docker/
