@@ -48,31 +48,6 @@ docker-compose up
 # Lastly, on your browser, go to http://localhost:5050
 ```
 
-### Technologies used
-- [Node.js](https://nodejs.org/en/)
-- [Express.js](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Docker](https://www.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
-- [PUG](https://pugjs.org/api/getting-started.html)
-- [Stylus](https://stylus-lang.com/)
-- [Semantic UI](https://semantic-ui.com/)
-- [jQuery](https://jquery.com/)
-- [Passport.js](http://www.passportjs.org/)
-- [Bcrypt.js](https://www.npmjs.com/package/bcryptjs)
-- [Mongoose](https://mongoosejs.com/)
-- [Nodemon](https://nodemon.io/)
-- [Multer](https://www.npmjs.com/package/multer)
-- [Dotenv](https://www.npmjs.com/package/dotenv)
-- [Nodemailer](https://nodemailer.com/about/)
-- [Nodemailer Sendgrid Transport](https://www.npmjs.com/package/nodemailer-sendgrid-transport)
-- [Sendgrid](https://sendgrid.com/)
-- [Express Session](https://www.npmjs.com/package/express-session)
-- [Express Flash](https://www.npmjs.com/package/express-flash)
-- [Express Validator](https://express-validator.github.io/docs/)
-- [Express Mongo Sanitize](https://www.npmjs.com/package/express-mongo-sanitize)
-- [Helmet](https://helmetjs.github.io/)
-
 ### Contributing 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change. Please make sure to update tests as appropriate.
 
