@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var { isAuth } = require('../helpers/authFunctions');
 
-router.get('/', function (req, res, next) {
+router.get('/', isAuth, function (req, res, next) {
   res.render('profile', {title: 'Profile', page: 'profile'});
 });
 
