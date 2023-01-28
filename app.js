@@ -36,7 +36,11 @@ app.use(session({
   saveUninitialized: false, // don't create session until something stored
   store: new memoryStore({
     checkPeriod: 3600000 // prune expired entries every 1hour
-  })
+  }),
+  httpOnly: true,
+  cookie: {
+    maxAge: 3600000 // 1 hour
+  }
 }));
 app.use(passport.initialize());
 app.use(passport.session());
